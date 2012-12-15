@@ -11,6 +11,7 @@ namespace Uj\Mail\Service;
 
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
+use Uj\Mail\Exception\RuntimeException;
 
 /**
  * Uj\Mail transport service factory.
@@ -37,6 +38,13 @@ class TransportFactory implements
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
         $config = $serviceLocator->get('config');
+
+        if (empty($config['uj']['mail']['transport']['type'])) {
+            throw new RuntimeException(
+                'Config required in order to create \Uj\Mail\Transport.'.
+                'required config key: $config["uj"]["mail"]["transport"].'
+            );
+        }
 
         $transportConfig = $config['uj']['mail']['transport'];
         $type = $transportConfig['type'];
