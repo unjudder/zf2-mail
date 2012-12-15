@@ -7,4 +7,8 @@
  * @license http://unjudder.com/license/new-bsd New BSD License
  * @package Uj\Mail
  */
-return array();
+return array(
+    'factories' => array(
+        'Uj\Mail\Transport' => 'Uj\Mail\Service\TransportFactory'
+    )
+);
