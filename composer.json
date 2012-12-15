@@ -1,0 +1,19 @@
+{
+    "name": "unjudder/mail",
+    "description": "email services provider on top of zendframework 2",
+    "license": "NEW BSD"
+    "authors": [{
+        "name": "Alrik Zachert",
+        "email": "alrik.zachert@unjudder.com"
+    }],
+    "keywords": [
+        "Mail",
+        "Email",
+        "Transport"
+    ],
+    "homepage": "http://github.com/unjudder/zf2-mail",
+    "require": {
+        "php": ">=5.3",
+        "zendframework/zendframework": "2.*"
+    }
+}
