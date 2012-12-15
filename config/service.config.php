@@ -7,13 +7,4 @@
  * @license http://unjudder.com/license/new-bsd New BSD License
  * @package Uj\Mail
  */
-return array(
-    'uj' => array(
-        'mail' => array(
-            'transport' => array(
-                'type' => 'sendmail',
-                'options' => array()
-            )
-        )
-    )
-);
+return array();

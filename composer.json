@@ -1,19 +1,37 @@
 {
     "name": "unjudder/mail",
     "description": "email services provider on top of zendframework 2",
-    "license": "BSD-3-Clause"
+    "license": "BSD-3-Clause",
     "authors": [{
         "name": "Alrik Zachert",
         "email": "alrik.zachert@unjudder.com"
     }],
     "keywords": [
-        "Mail",
         "Email",
-        "Transport"
+        "Transport",
+        "zf2"
     ],
     "homepage": "http://github.com/unjudder/zf2-mail",
+    "support": {
+        "issues": "https://github.com/unjudder/zf2-mail/issues",
+        "wiki": "https://github.com/unjudder/zf2-mail/wiki"
+    },
+    "repositories": [{
+        "type": "composer",
+        "url": "https://packages.zendframework.com/"
+    }],
     "require": {
         "php": ">=5.3",
-        "zendframework/zendframework": "2.*"
+        "zendframework/zend-mail": "2.*",
+        "zendframework/zend-modulemanager": "2.*",
+        "zendframework/zend-servicemanager": "2.*"
+    },
+    "autoload": {
+        "prs-0": {
+            "Uj\\Mail": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
     }
 }

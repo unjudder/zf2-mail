@@ -7,13 +7,7 @@
  * @license http://unjudder.com/license/new-bsd New BSD License
  * @package Uj\Mail
  */
-return array(
-    'uj' => array(
-        'mail' => array(
-            'transport' => array(
-                'type' => 'sendmail',
-                'options' => array()
-            )
-        )
-    )
+return array( 
+    'Uj\Mail\Module'                   => __DIR__ . '/Module.php',
+    'Uj\Mail\Service\TransportFactory' => __DIR__ . '/src/Uj/Mail/Service/TransportFactory.php'
 );
