@@ -1,7 +1,7 @@
 {
     "name": "unjudder/mail",
     "description": "email services provider on top of zendframework 2",
-    "license": "NEW BSD"
+    "license": "BSD-3-Clause"
     "authors": [{
         "name": "Alrik Zachert",
         "email": "alrik.zachert@unjudder.com"
