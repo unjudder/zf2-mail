@@ -2,22 +2,11 @@
 
 Email Module for [Zendframework 2](http://framework.zend.com/ "Almost Genius").
 
-<table>
-	<tr>
-		<th>Version</th>
-		<td>1.0-alpha</td>
-	</tr>
-	<tr>
-		<th>Authors</th>
-		<td>
-		- Alrik Zachert <alrik.zachert@unjudder.com>
-		</td>
-	</tr>
-	<tr>
-		<th>License</th>
-		<td>[BSD-3-Clause](https://github.com/unjudder/zf2-mail/blob/master/LICENSE.md License)</td>
-	</tr>
-</table>
+   `#`          | `Uj\Mail`
+----------------|----------
+**Version**     | 1.0-alpha
+**Authors**     | <ul><li>Alrik Zachert <alrik.zachert@unjudder.com></li></ul>
+**License**     | [BSD-3-Clause](https://github.com/unjudder/zf2-mail/blob/master/LICENSE.md License)
 
 ## Overview
 
@@ -30,6 +19,7 @@ an easy to use, config aware email - service module.
 - Provide configurable core services (transport, renderer, email)
 - Render emails from templates
 - Easy to use api
+- 
 ```php
 $serviceLocator->get('Uj\Mail\Email')
 	->send('module/nameOfEmailTpl', array(
