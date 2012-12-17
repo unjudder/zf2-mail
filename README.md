@@ -19,7 +19,7 @@ an easy to use, config aware email - service module.
 - Provide configurable core services (transport, renderer, email)
 - Render emails from templates
 - Easy to use api
-- 
+
 ```php
 $serviceLocator->get('Uj\Mail\Email')
 	->send('module/nameOfEmailTpl', array(
