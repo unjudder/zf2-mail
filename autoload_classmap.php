@@ -7,7 +7,11 @@
  * @license http://unjudder.com/license/new-bsd New BSD License
  * @package Uj\Mail
  */
-return array( 
-    'Uj\Mail\Module'                   => __DIR__ . '/Module.php',
-    'Uj\Mail\Service\TransportFactory' => __DIR__ . '/src/Uj/Mail/Service/TransportFactory.php'
+return array(
+    'Uj\Mail\Service\EmailFactory'         => __DIR__ . '/src/Uj/Mail/Service/EmailFactory.php',
+    'Uj\Mail\Service\RendererFactory'      => __DIR__ . '/src/Uj/Mail/Service/RendererFactory.php',
+    'Uj\Mail\Service\Email'                => __DIR__ . '/src/Uj/Mail/Service/Email.php',
+    'Uj\Mail\Service\TransportFactory'     => __DIR__ . '/src/Uj/Mail/Service/TransportFactory.php',
+    'Uj\Mail\Exception\RuntimeException'   => __DIR__ . '/src/Uj/Mail/Exception/RuntimeException.php',
+    'Uj\Mail\Exception\ExceptionInterface' => __DIR__ . '/src/Uj/Mail/Exception/ExceptionInterface.php'
 );

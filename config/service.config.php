@@ -9,6 +9,8 @@
  */
 return array(
     'factories' => array(
+        'Uj\Mail\Email' => 'Uj\Mail\Service\EmailFactory',
+        'Uj\Mail\Renderer' => 'Uj\Mail\Service\RendererFactory',
         'Uj\Mail\Transport' => 'Uj\Mail\Service\TransportFactory'
     )
 );

@@ -40,9 +40,9 @@ class Module implements
 
     /**
      * Return Uj\Mail autoload config.
-     * 
+     *
      * @see     AutoloaderProviderInterface::getAutoloaderConfig()
-     * @return  array
+     * @return array
      */
     public function getAutoloaderConfig()
     {
@@ -62,7 +62,7 @@ class Module implements
      * Return the Uj\Mail module config.
      *
      * @see     ConfigProviderInterface::getConfig()
-     * @return  array
+     * @return array
      */
     public function getConfig()
     {
@@ -73,7 +73,7 @@ class Module implements
      * Return the Uj\Mail service config.
      *
      * @see     ServiceProviderInterface::getServiceConfig()
-     * @return  array
+     * @return array
      */
     public function getServiceConfig()
     {
