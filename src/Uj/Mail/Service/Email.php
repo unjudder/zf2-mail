@@ -79,8 +79,6 @@ class Email
 
         if (isset($data['encoding'])) {
             $mail->setEncoding($data['encoding']);
-        } else {
-            $mail->setEncoding('utf-8');
         }
         if (isset($data['from'])) {
             $mail->setFrom($data['from']);
@@ -106,6 +104,9 @@ class Email
 
         $content = $this->renderMail($tpl, $data);
         $mail->setBody($content);
+        $mail->getHeaders()
+            ->addHeaderLine('Content-Type', 'text/plain; charset=UTF-8')
+            ->addHeaderLine('Content-Transfer-Encoding', '8bit');
 
         return $mail;
     }
