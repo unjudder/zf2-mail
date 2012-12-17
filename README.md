@@ -38,7 +38,7 @@ The easiest way to install unjudder/mail is by using [composer](http://getcompos
 
 ```php
 "require": {
-	"unjudder/mail": "dev-master"
+	"unjudder/mail": "1.0-alpha"
 }
 ```
 
