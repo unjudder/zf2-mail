@@ -55,5 +55,7 @@ class RendererFactory implements
         }
         $renderer = new PhpRenderer();
         $renderer->setResolver($resolver);
+
+        return $renderer;
     }
 }
