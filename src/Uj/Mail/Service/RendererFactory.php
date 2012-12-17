@@ -18,7 +18,7 @@ use Zend\View\Resolver\TemplateMapResolver;
 use Uj\Mail\Exception\RuntimeException;
 
 /**
- * Uj\Mail email service factory.
+ * Uj\Mail email renderer factory.
  *
  * @since 1.0
  * @package Uj\Mail\Service
