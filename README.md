@@ -1,6 +1,23 @@
-# unjudder/mail 1.0-alpha
+# unjudder/mail
 
 Email Module for [Zendframework 2](http://framework.zend.com/ "Almost Genius").
+
+<table>
+	<tr>
+		<th>Version</th>
+		<td>1.0-alpha</td>
+	</tr>
+	<tr>
+		<th>Authors</th>
+		<td>
+		- Alrik Zachert <alrik.zachert@unjudder.com>
+		</td>
+	</tr>
+	<tr>
+		<th>License</th>
+		<td>[BSD-3-Clause](https://github.com/unjudder/zf2-mail/blob/master/LICENSE.md License)</td>
+	</tr>
+</table>
 
 ## Overview
 
@@ -28,12 +45,15 @@ $serviceLocator->get('Uj\Mail\Email')
 The easiest way to install unjudder/mail is by using [composer](http://getcomposer.org "composer - package manager").
 
 - Add the following lines to your `composer.json`
+
 ```php
 "require": {
 	"unjudder/mail": "dev-master"
 }
 ```
+
 - Load the zf2 module, edit your `config/application.config.php` file:
+
 ```php
 'modules' => array(
 	'Uj\Mail'
