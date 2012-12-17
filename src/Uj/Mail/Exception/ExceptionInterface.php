@@ -13,7 +13,7 @@ use Zend\Stdlib\Exception\ExceptionInterface as BaseExceptionInterface;
 
 /**
  * Base Uj\Mail exception interface
- * 
+ *
  * @since 0.2
  * @package Uj\Mail\Exception
  */
