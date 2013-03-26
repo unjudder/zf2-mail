@@ -56,7 +56,7 @@ The easiest way to install unjudder/mail is by using [composer](http://getcompos
 
 The config is located in the nested config namespace 
 ```php
-$config['uj']['smail'];
+$config['uj']['mail'];
 ```
 #### Uj\Mail\Transport
 
