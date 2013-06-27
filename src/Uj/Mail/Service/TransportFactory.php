@@ -65,8 +65,13 @@ class TransportFactory implements
             if (class_exists($optionsClass)) {
                 $options = new $optionsClass($options);
             }
-
-            $transport->setOptions($options);
+            // Zend\Mail\Transport\Sendmail provides setParameters
+            // Other transport types provide setOptions
+            if (method_exists($transport, 'setOptions')) {
+                $transport->setOptions($options);
+            } else if (method_exists($transport, 'setParameters')) {
+                $transport->setParameters($options);
+            } 
         }
 
         return $transport;
