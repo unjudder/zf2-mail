@@ -28,7 +28,7 @@
         "zendframework/zend-view": "2.*"
     },
     "autoload": {
-        "prs-0": {
+        "psr-0": {
             "Uj\\Mail": "src/"
         },
         "classmap": [
