@@ -4,7 +4,7 @@ Email Module for [Zendframework 2](http://framework.zend.com/ "Almost Genius").
 
    `#`          | `Uj\Mail`
 ----------------|----------
-**Version**     | 1.0-alpha1
+**Version**     | 1.0-alpha2
 **Authors**     | <ul><li>Alrik Zachert <alrik.zachert@unjudder.com></li></ul>
 **License**     | [BSD-3-Clause](https://github.com/unjudder/zf2-mail/blob/master/LICENSE.md License)
 
@@ -38,7 +38,7 @@ The easiest way to install unjudder/mail is by using [composer](http://getcompos
 
 ```php
 "require": {
-	"unjudder/mail": "1.0-alpha1"
+	"unjudder/mail": "1.0-alpha2"
 }
 ```
 
