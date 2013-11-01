@@ -54,6 +54,7 @@ class RendererFactory implements
             $resolver->attach($pathStackResolver);
         }
         $renderer = new PhpRenderer();
+        $renderer->setHelperPluginManager($serviceLocator->get('ViewHelperManager'));
         $renderer->setResolver($resolver);
 
         return $renderer;
