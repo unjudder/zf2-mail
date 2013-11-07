@@ -37,6 +37,13 @@ class Email
     protected $renderer = null;
 
     /**
+     * The email message.
+     *
+     * @var Message
+     */
+    protected $message;
+
+    /**
      * Initialize the mail service
      *
      * @param TransportInterface $transport
@@ -53,27 +60,26 @@ class Email
      * @param string|Message $tpl
      * @param array          $data
      */
-    public function send($tpl, array $data = null)
+    public function send($tpl = null, array $data = array())
     {
         if ($tpl instanceof Message) {
             $mail = $tpl;
         } else {
-            if ($data === null) {
-                throw new \InvalidArgumentException('Expected data to be array, null given.');
+            if ($tpl) {
+                $this->createMessage($tpl, $data);    
             }
-
-            $mail = $this->getMessage($tpl, $data);
+            $mail = $this->getMessage();
         }
 
         $this->getTransport()->send($mail);
     }
 
-    /**
-     * @param  string  $tpl
-     * @param  array   $data
-     * @return Message
-     */
-    public function getMessage($tpl, array $data)
+    public function setMessage(Message $message)
+    {
+        $this->message = $message;
+    }
+
+    public function createMessage($tpl, array $data)
     {
         $mail = new Message();
 
@@ -81,25 +87,25 @@ class Email
             $mail->setEncoding($data['encoding']);
         }
         if (isset($data['from'])) {
-            $mail->setFrom($data['from']);
+            call_user_func_array(array($mail, "setFrom"), (array) $data['from']);
         }
         if (isset($data['to'])) {
-            $mail->setTo($data['to']);
+            call_user_func_array(array($mail, "setTo"), (array) $data['to']);
         }
         if (isset($data['cc'])) {
-            $mail->setCc($data['cc']);
+            call_user_func_array(array($mail, "setCc"), (array) $data['cc']);
         }
         if (isset($data['bcc'])) {
-            $mail->setBcc($data['bcc']);
+            call_user_func_array(array($mail, "setBcc"), (array) $data['bcc']);
         }
         if (isset($data['subject'])) {
             $mail->setSubject($data['subject']);
         }
         if (isset($data['sender'])) {
-            $mail->setSender($data['sender']);
+            call_user_func_array(array($mail, "setSender"), (array) $data['sender']);
         }
         if (isset($data['replyTo'])) {
-            $mail->setReplyTo($data['replyTo']);
+            call_user_func_array(array($mail, "setReplyTo"), (array) $data['replyTo']);
         }
 
         $content = $this->renderMail($tpl, $data);
@@ -108,7 +114,16 @@ class Email
             ->addHeaderLine('Content-Type', 'text/plain; charset=UTF-8')
             ->addHeaderLine('Content-Transfer-Encoding', '8bit');
 
-        return $mail;
+        $this->setMessage($mail);     
+    }
+
+
+    /**
+     * @return Message
+     */
+    public function getMessage()
+    {
+        return $this->message;
     }
 
     /**
