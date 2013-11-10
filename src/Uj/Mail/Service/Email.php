@@ -37,13 +37,6 @@ class Email
     protected $renderer = null;
 
     /**
-     * The email message.
-     *
-     * @var Message
-     */
-    protected $message;
-
-    /**
      * Initialize the mail service
      *
      * @param TransportInterface $transport
@@ -60,26 +53,27 @@ class Email
      * @param string|Message $tpl
      * @param array          $data
      */
-    public function send($tpl = null, array $data = array())
+    public function send($tpl, array $data = null)
     {
         if ($tpl instanceof Message) {
             $mail = $tpl;
         } else {
-            if ($tpl) {
-                $this->createMessage($tpl, $data);    
+            if ($data === null) {
+                throw new \InvalidArgumentException('Expected data to be array, null given.');
             }
-            $mail = $this->getMessage();
+
+            $mail = $this->getMessage($tpl, $data);
         }
 
         $this->getTransport()->send($mail);
     }
 
-    public function setMessage(Message $message)
-    {
-        $this->message = $message;
-    }
-
-    public function createMessage($tpl, array $data)
+    /**
+     * @param  string  $tpl
+     * @param  array   $data
+     * @return Message
+     */
+    public function getMessage($tpl, array $data)
     {
         $mail = new Message();
 
@@ -114,16 +108,7 @@ class Email
             ->addHeaderLine('Content-Type', 'text/plain; charset=UTF-8')
             ->addHeaderLine('Content-Transfer-Encoding', '8bit');
 
-        $this->setMessage($mail);     
-    }
-
-
-    /**
-     * @return Message
-     */
-    public function getMessage()
-    {
-        return $this->message;
+        return $mail;
     }
 
     /**
