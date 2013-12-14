@@ -81,25 +81,25 @@ class Email
             $mail->setEncoding($data['encoding']);
         }
         if (isset($data['from'])) {
-            $mail->setFrom($data['from']);
+            call_user_func_array(array($mail, "setFrom"), (array) $data['from']);
         }
         if (isset($data['to'])) {
-            $mail->setTo($data['to']);
+            call_user_func_array(array($mail, "setTo"), (array) $data['to']);
         }
         if (isset($data['cc'])) {
-            $mail->setCc($data['cc']);
+            call_user_func_array(array($mail, "setCc"), (array) $data['cc']);
         }
         if (isset($data['bcc'])) {
-            $mail->setBcc($data['bcc']);
+            call_user_func_array(array($mail, "setBcc"), (array) $data['bcc']);
         }
         if (isset($data['subject'])) {
             $mail->setSubject($data['subject']);
         }
         if (isset($data['sender'])) {
-            $mail->setSender($data['sender']);
+            call_user_func_array(array($mail, "setSender"), (array) $data['sender']);
         }
         if (isset($data['replyTo'])) {
-            $mail->setReplyTo($data['replyTo']);
+            call_user_func_array(array($mail, "setReplyTo"), (array) $data['replyTo']);
         }
 
         $content = $this->renderMail($tpl, $data);
